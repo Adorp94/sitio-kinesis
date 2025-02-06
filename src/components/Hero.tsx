@@ -1,4 +1,6 @@
+
 import { useEffect, useRef } from "react";
+import { ArrowRight } from "lucide-react";
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -16,26 +18,37 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="relative h-screen overflow-hidden">
-      <div
-        ref={heroRef}
-        className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1488590528505-98d2b5aba04b')] bg-cover bg-center"
-        style={{ transform: "translateY(0)" }}
-      >
-        <div className="absolute inset-0 bg-black/40" />
-      </div>
-      
-      <div className="relative h-full flex items-center justify-center text-center">
-        <div className="max-w-4xl px-4 animate-fadeIn">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-            Kinesis Catalítica
-          </h1>
-          <p className="text-xl md:text-2xl text-white/90 mb-8">
-            Transformando el futuro de la industria química
-          </p>
-          <button className="px-8 py-3 bg-white text-black font-medium rounded-full hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105">
-            Descubre más
-          </button>
+    <div className="relative min-h-screen bg-[#F6F7F9] overflow-hidden rounded-3xl mx-4 my-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-12">
+          <div className="flex-1 space-y-8">
+            <div className="flex items-center">
+              <img
+                src="/placeholder.svg"
+                alt="Kinesis"
+                className="h-12 w-auto"
+              />
+            </div>
+            <h1 className="text-5xl md:text-7xl font-bold leading-tight">
+              Crédito simple y <br />
+              líneas de crédito
+            </h1>
+            <p className="text-xl text-gray-600 max-w-2xl">
+              En Kinesis te ofrecemos soluciones financieras flexibles diseñadas
+              para el crecimiento y éxito de su negocio
+            </p>
+            <button className="flex items-center gap-2 px-6 py-3 bg-gray-200/80 hover:bg-gray-200 rounded-full transition-colors">
+              Contáctanos
+              <ArrowRight className="h-5 w-5" />
+            </button>
+          </div>
+          <div className="flex-1 relative">
+            <img
+              src="/placeholder.svg"
+              alt="Tarjetas de crédito"
+              className="w-full max-w-xl transform rotate-12"
+            />
+          </div>
         </div>
       </div>
     </div>

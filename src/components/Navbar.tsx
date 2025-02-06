@@ -1,9 +1,8 @@
+
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -21,56 +20,28 @@ const Navbar = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <Link
-            to="/"
-            className="text-2xl font-bold tracking-tighter hover:opacity-80 transition-opacity"
-          >
-            KINESIS
+        <div className="flex justify-between items-center h-20">
+          <Link to="/" className="flex items-center">
+            <img
+              src="/placeholder.svg"
+              alt="Kinesis Logo"
+              className="h-8 w-auto"
+            />
           </Link>
 
-          {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex items-center space-x-8">
             <NavLink to="/">Inicio</NavLink>
-            <NavLink to="/nosotros">Nosotros</NavLink>
-            <NavLink to="/servicios">Servicios</NavLink>
-            <NavLink to="/contacto">Contacto</NavLink>
+            <NavLink to="/productos">Productos</NavLink>
+            <NavLink to="/legal">Legal</NavLink>
+            <Link
+              to="/contacto"
+              className="px-4 py-2 rounded-full bg-black text-white hover:bg-black/90 transition-colors"
+            >
+              Contacto
+            </Link>
           </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden"
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle menu"
-          >
-            {isOpen ? (
-              <X className="h-6 w-6" />
-            ) : (
-              <Menu className="h-6 w-6" />
-            )}
-          </button>
         </div>
       </div>
-
-      {/* Mobile Menu */}
-      {isOpen && (
-        <div className="md:hidden absolute top-16 inset-x-0 bg-white/90 backdrop-blur-md shadow-lg animate-fadeIn">
-          <div className="px-2 pt-2 pb-3 space-y-1">
-            <MobileNavLink to="/" onClick={() => setIsOpen(false)}>
-              Inicio
-            </MobileNavLink>
-            <MobileNavLink to="/nosotros" onClick={() => setIsOpen(false)}>
-              Nosotros
-            </MobileNavLink>
-            <MobileNavLink to="/servicios" onClick={() => setIsOpen(false)}>
-              Servicios
-            </MobileNavLink>
-            <MobileNavLink to="/contacto" onClick={() => setIsOpen(false)}>
-              Contacto
-            </MobileNavLink>
-          </div>
-        </div>
-      )}
     </nav>
   );
 };
@@ -78,25 +49,7 @@ const Navbar = () => {
 const NavLink = ({ to, children }: { to: string; children: React.ReactNode }) => (
   <Link
     to={to}
-    className="text-gray-900 hover:text-gray-600 transition-colors duration-200 font-medium"
-  >
-    {children}
-  </Link>
-);
-
-const MobileNavLink = ({
-  to,
-  onClick,
-  children,
-}: {
-  to: string;
-  onClick: () => void;
-  children: React.ReactNode;
-}) => (
-  <Link
-    to={to}
-    className="block px-3 py-2 text-base font-medium text-gray-900 hover:text-gray-600 transition-colors duration-200"
-    onClick={onClick}
+    className="text-gray-900 hover:text-gray-600 transition-colors duration-200"
   >
     {children}
   </Link>
