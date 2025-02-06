@@ -15,12 +15,18 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white/90 backdrop-blur-md shadow-sm" : "bg-transparent"
+      className={`fixed w-full z-50 transition-all duration-500 px-4 py-2 ${
+        isScrolled 
+          ? "top-4" 
+          : "top-0 bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+      <div className={`max-w-7xl mx-auto ${
+        isScrolled 
+          ? "bg-white/90 backdrop-blur-md shadow-lg rounded-full px-2 py-2" 
+          : ""
+      }`}>
+        <div className="flex justify-between items-center h-16">
           <Link to="/" className="flex items-center">
             <img
               src="/placeholder.svg"
@@ -35,7 +41,7 @@ const Navbar = () => {
             <NavLink to="/legal">Legal</NavLink>
             <Link
               to="/contacto"
-              className="px-4 py-2 rounded-full bg-black text-white hover:bg-black/90 transition-colors"
+              className="px-6 py-2 rounded-full bg-black text-white hover:bg-black/90 transition-colors"
             >
               Contacto
             </Link>
