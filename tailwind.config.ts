@@ -19,8 +19,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["SF Pro Display", "system-ui", "sans-serif"],
-        body: ["SF Pro Text", "system-ui", "sans-serif"],
+        manrope: ["Manrope", "system-ui", "sans-serif"],
+        sans: ["Manrope", "system-ui", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",

@@ -17,10 +17,8 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-[#f5f4f6] overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-white via-white/50 to-transparent" />
-      
-      <div ref={heroRef} className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16">
+    <div className="relative min-h-screen bg-gradient-to-b from-[#FFFFFF] to-[#647E9C] overflow-hidden">      
+      <div ref={heroRef} className="relative max-w-[1400px] mx-auto px-8 md:px-12 lg:px-16 pt-32 pb-16">
         <div className="flex flex-col md:flex-row items-center justify-between gap-12">
           <div className="flex-1 space-y-8">
             <div className="flex items-center">
@@ -30,30 +28,25 @@ const Hero = () => {
                 className="h-14 w-auto"
               />
             </div>
-            <h1 className="text-5xl md:text-7xl font-bold leading-tight bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">
+            <h1 className="font-manrope text-5xl md:text-7xl font-bold leading-tight text-white">
               Crédito simple y <br />
               líneas de crédito
             </h1>
-            <p className="text-xl text-gray-600 max-w-2xl">
+            <p className="font-manrope text-xl text-white/90 max-w-2xl">
               En Kinesis te ofrecemos soluciones financieras flexibles diseñadas
               para el crecimiento y éxito de su negocio
             </p>
-            <button className="group flex items-center gap-2 px-6 py-3 bg-gray-100 hover:bg-gray-200 rounded-full transition-all duration-300">
-              Contáctanos
-              <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+            <button className="group flex items-center gap-2 px-6 py-3 bg-white/20 hover:bg-white/30 rounded-full transition-all duration-300">
+              <span className="text-white font-manrope">Contáctanos</span>
+              <ArrowRight className="h-5 w-5 text-white transition-transform group-hover:translate-x-1" />
             </button>
           </div>
           <div className="flex-1 relative">
-            <div className="relative w-full aspect-[4/3]">
+            <div className="relative w-full aspect-[4/3] flex items-center justify-center">
               <img
                 src="/tarjetas.avif"
                 alt="Tarjetas de crédito"
-                className="absolute w-2/3 h-auto transform rotate-12 translate-x-12 translate-y-8 shadow-2xl rounded-2xl transition-transform duration-500 hover:rotate-6"
-              />
-              <img
-                src="/tarjetas.avif"
-                alt="Tarjetas de crédito"
-                className="absolute w-2/3 h-auto transform -rotate-6 shadow-2xl rounded-2xl transition-transform duration-500 hover:rotate-0"
+                className="w-2/3 h-auto"
               />
             </div>
           </div>
