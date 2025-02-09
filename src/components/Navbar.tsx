@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
@@ -29,7 +28,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="flex items-center">
             <img
-              src="/placeholder.svg"
+              src="/kinesis-logo-main.avif"
               alt="Kinesis Logo"
               className="h-8 w-auto"
             />
