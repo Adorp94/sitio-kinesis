@@ -27,23 +27,24 @@ const Hero = () => {
                 </p>
                 <div>
                   <button 
-                    className="flex items-center gap-2 px-4 py-[4px] bg-white/20 hover:bg-white/30 rounded-lg transition-all duration-300"
+                    className="group inline-flex items-center gap-2 bg-white/20 rounded-[1rem] transition-all duration-300"
                   >
-                    <span className="text-white font-manrope">Contáctanos</span>
-                    <div className="bg-[#E4A853] rounded-lg p-[4px]">
-                      <ArrowRight className="h-4 w-4 text-white transition-transform group-hover:translate-x-1" />
+                    <span className="text-white font-manrope px-6 py-3">Contáctanos</span>
+                    <div className="bg-[#E4A853] rounded-[1rem] p-3">
+                      <ArrowRight className="h-5 w-5 text-white transition-transform group-hover:translate-x-1" />
                     </div>
                   </button>
                 </div>
               </div>
-              <div className="absolute right-14 top-[60%]">
-                <img
-                  src="/tarjetas.avif"
-                  alt="Tarjetas de crédito"
-                  className="w-[380px] h-auto transform -rotate-12"
-                />
-              </div>
             </div>
+          </div>
+          {/* Contenedor de tarjetas con posición absoluta */}
+          <div className="absolute bottom-0 right-0 pr-14 pb-8">
+            <img
+              src="/tarjetas.avif"
+              alt="Tarjetas de crédito"
+              className="w-[380px] h-auto transform -rotate-12"
+            />
           </div>
         </div>
       </div>
