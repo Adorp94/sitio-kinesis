@@ -1,28 +1,13 @@
-import { useEffect, useRef } from "react";
 import { ArrowRight } from "lucide-react";
 
 const Hero = () => {
-  const heroRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (heroRef.current) {
-        const scrolled = window.scrollY;
-        heroRef.current.style.transform = `translateY(${scrolled * 0.5}px)`;
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
-    <div className="relative w-full bg-[#f5f4f6] px-4 sm:px-6 lg:px-8 pt-24">
-      <div className="max-w-[1400px] mx-auto">
+    <div className="relative w-full h-screen bg-[#f5f4f6] px-8 sm:px-12 lg:px-16 flex items-center">
+      <div className="max-w-[1200px] mx-auto w-full">
         {/* Hero container con forma redondeada y gradiente */}
         <div className="relative rounded-[2rem] overflow-hidden bg-gradient-to-b from-[#FFFFFF] to-[#647E9C]">
-          <div ref={heroRef} className="relative px-8 md:px-12 xl:px-16 py-20">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-12 max-w-[1200px] mx-auto">
+          <div className="relative px-8 md:px-12 xl:px-16 py-16">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-12">
               <div className="flex-1 space-y-8">
                 <div className="flex items-center">
                   <img

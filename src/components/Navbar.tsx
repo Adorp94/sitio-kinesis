@@ -14,13 +14,13 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed w-full z-50 transition-all duration-500 px-4 py-2 ${
+      className={`fixed w-full z-50 transition-all duration-500 px-8 sm:px-12 lg:px-16 py-2 ${
         isScrolled 
           ? "top-4" 
           : "top-0 bg-transparent"
       }`}
     >
-      <div className={`max-w-7xl mx-auto ${
+      <div className={`max-w-[1200px] mx-auto ${
         isScrolled 
           ? "bg-white/90 backdrop-blur-md shadow-lg rounded-full px-2 py-2" 
           : ""
