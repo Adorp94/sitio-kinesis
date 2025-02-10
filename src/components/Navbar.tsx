@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,37 +14,79 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav
-      className={`fixed w-full z-50 transition-all duration-500 px-6 sm:px-8 lg:px-12 py-2 ${
-        isScrolled 
-          ? "top-4" 
-          : "top-0 bg-transparent"
-      }`}
+    <nav 
+      className={`
+        fixed top-0 left-0 right-0 z-50
+        transition-all duration-500 ease-out
+        ${isScrolled ? "mt-4" : "bg-[#f5f4f6]"}
+      `}
+      style={{ transformOrigin: "50% 50% 0px" }}
     >
-      <div className={`max-w-[1100px] mx-auto ${
-        isScrolled 
-          ? "bg-white/90 backdrop-blur-md shadow-lg rounded-full px-2 py-2" 
-          : ""
-      }`}>
-        <div className="flex justify-between items-center h-14">
-          <Link to="/" className="flex items-center">
-            <img
-              src="/kinesis-logo-main.avif"
-              alt="Kinesis Logo"
-              className="h-6 w-auto"
-            />
-          </Link>
-
-          <div className="hidden md:flex items-center gap-8">
-            <NavLink to="/">Inicio</NavLink>
-            <NavLink to="/productos">Productos</NavLink>
-            <NavLink to="/legal">Legal</NavLink>
-            <Link
-              to="/contacto"
-              className="px-5 py-1.5 rounded-full bg-black text-white hover:bg-black/90 transition-colors"
+      <div className="max-w-[1150px] mx-auto px-6 sm:px-8 lg:px-12">
+        <div 
+          className={`
+            flex justify-center w-full
+            transition-all duration-500 ease-out 
+            origin-center transform-gpu
+            ${isScrolled ? "scale-95" : "scale-100"}
+          `}
+          style={{ transformOrigin: "50% 50% 0px" }}
+        >
+          <div 
+            className={`
+              flex items-center transition-all duration-500 ease-out
+              ${isScrolled 
+                ? "bg-[rgba(26,26,26,0.5)] backdrop-blur-md rounded-2xl px-3 py-2 gap-3 w-auto" 
+                : "justify-between w-full py-4"}
+            `}
+            style={{ transformOrigin: "50% 50% 0px" }}
+          >
+            <Link 
+              to="/"
+              className={`
+                bg-white flex items-center transition-all duration-500 ease-out
+                ${isScrolled ? "rounded-xl p-2" : "rounded-lg p-2"}
+              `}
+              style={{ transformOrigin: "50% 50% 0px" }}
             >
-              Contacto
+              <img
+                src="/kinesis-logo-main.avif"
+                alt="Kinesis Logo"
+                className="h-6 w-auto"
+              />
             </Link>
+
+            <div className="hidden md:flex items-center gap-8">
+              {!isScrolled && (
+                <div className="flex gap-8">
+                  <NavLink to="/" isActive={location.pathname === "/"}>Inicio</NavLink>
+                  <NavLink to="/productos" isActive={location.pathname === "/productos"}>Productos</NavLink>
+                  <NavLink to="/legal" isActive={location.pathname === "/legal"}>Legal</NavLink>
+                </div>
+              )}
+
+              <div className="flex items-center gap-3">
+                {isScrolled && (
+                  <div 
+                    className="bg-black rounded-lg px-4 py-2"
+                    style={{ transformOrigin: "50% 50% 0px" }}
+                  >
+                    <span className="text-white font-manrope text-sm">Inicio</span>
+                  </div>
+                )}
+                <Link
+                  to="/contacto"
+                  className={`
+                    px-4 py-2 rounded transition-all duration-500
+                    ${isScrolled 
+                      ? "bg-white text-[#6c7178] hover:bg-gray-100" 
+                      : "bg-black text-white hover:bg-black/90"}
+                  `}
+                >
+                  Contacto
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -51,13 +94,23 @@ const Navbar = () => {
   );
 };
 
-const NavLink = ({ to, children }: { to: string; children: React.ReactNode }) => (
-  <Link
-    to={to}
-    className="text-gray-900 hover:text-gray-600 transition-colors duration-200"
-  >
-    {children}
-  </Link>
+const NavLink = ({ to, children, isActive }: { to: string; children: React.ReactNode; isActive: boolean }) => (
+  <div className="relative">
+    <Link
+      to={to}
+      className={`
+        font-manrope text-sm transition-colors duration-300
+        ${isActive ? "opacity-100" : "opacity-70 hover:opacity-100"}
+      `}
+    >
+      {children}
+    </Link>
+    {isActive && (
+      <div className="absolute left-1/2 -translate-x-1/2 top-full mt-1">
+        <div className="w-1 h-1 rounded-full bg-current" />
+      </div>
+    )}
+  </div>
 );
 
 export default Navbar;

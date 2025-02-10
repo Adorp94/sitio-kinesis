@@ -46,10 +46,16 @@ export default {
           "0%": { transform: "translateX(-100%)" },
           "100%": { transform: "translateX(0)" },
         },
+        springIn: {
+         "0%": { transform: "scale(1)" },
+         "50%": { transform: "scale(0.95)" },
+         "100%": { transform: "scale(0.9)" },
+        },
       },
       animation: {
         fadeIn: "fadeIn 0.5s ease-out forwards",
         slideIn: "slideIn 0.5s ease-out forwards",
+        springIn: "springIn 0.7s ease-in-out forwards"
       },
     },
   },
