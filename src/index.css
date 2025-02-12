@@ -37,6 +37,10 @@
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
+.hero-gradient {
+  background: linear-gradient(180deg, #FFFFFF -31%, rgb(82, 104, 129) 100%);
+}
+
 .fade-up.visible {
   opacity: 1;
   transform: translateY(0);

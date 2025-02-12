@@ -5,7 +5,7 @@ const Hero = () => {
     <div className="relative w-full min-h-[85vh] bg-[#f5f4f6] px-6 sm:px-8 lg:px-12 flex items-center mt-20">
       <div className="max-w-[1150px] mx-auto w-full">
         {/* Hero container con forma redondeada y gradiente */}
-        <div className="relative rounded-[2rem] overflow-hidden bg-gradient-to-b from-[#FFFFFF] to-[#647E9C]">
+        <div className="relative rounded-[2rem] overflow-hidden hero-gradient">
           <div className="relative px-8 md:px-14 py-16 md:py-14">
             <div className="flex flex-col md:flex-row items-start justify-between">
               <div className="flex-1 space-y-8">
