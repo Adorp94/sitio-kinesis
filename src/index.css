@@ -16,7 +16,8 @@
   }
 
   body {
-    @apply bg-background text-foreground antialiased font-manrope;
+    @apply bg-background text-foreground antialiased font-manrope overscroll-none;
+    overscroll-behavior-y: none;
   }
 
   html {
@@ -37,10 +38,6 @@
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-.hero-gradient {
-  background: linear-gradient(180deg, #FFFFFF -31%, rgb(82, 104, 129) 100%);
-}
-
 .fade-up.visible {
   opacity: 1;
   transform: translateY(0);
@@ -53,7 +50,7 @@
 
 /* Estilos específicos para el Hero */
 .hero-gradient {
-  background: linear-gradient(180deg, #FFFFFF -31%, rgb(100, 126, 156) 100%);
+  background: linear-gradient(180deg, #FFFFFF -31%, rgb(82, 104, 129) 100%);
 }
 
 /* Estilos para la navegación */

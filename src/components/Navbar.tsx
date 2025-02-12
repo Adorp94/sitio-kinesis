@@ -15,10 +15,11 @@ const Navbar = () => {
 
   return (
     <nav 
+      style={{ position: 'fixed', top: 0, left: 0, right: 0 }}
       className={`
-        fixed top-0 left-0 right-0 z-50 h-20
+        z-50 h-20 bg-[#f5f4f6]
         transition-all duration-500 ease-out
-        ${isScrolled ? "py-4" : "bg-[#f5f4f6]"}
+        ${isScrolled ? "py-4" : ""}
       `}
     >
       <div className="relative h-full w-full">
@@ -34,7 +35,7 @@ const Navbar = () => {
               className={`
                 flex items-center h-full transition-all duration-500 ease-out
                 ${isScrolled 
-                  ? "bg-[rgba(26,26,26,0.5)] backdrop-blur-md rounded-2xl px-3 gap-3 w-auto" 
+                  ? "bg-[rgba(26,26,26,0.5)] backdrop-blur-md rounded-[12px] px-1.5 gap-1.5 w-auto" 
                   : "w-full px-6 sm:px-8 lg:px-12 justify-between"}
               `}
             >
@@ -42,7 +43,7 @@ const Navbar = () => {
                 to="/"
                 className={`
                   bg-white flex items-center transition-all duration-500 ease-out
-                  ${isScrolled ? "rounded-xl p-2" : "rounded-lg p-2"}
+                  ${isScrolled ? "rounded-[12px] p-2" : "rounded-lg p-2"}
                 `}
               >
                 <img
@@ -73,9 +74,9 @@ const Navbar = () => {
                   </div>
                 )}
 
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-1.5">
                   {isScrolled && (
-                    <div className="bg-black rounded-lg px-4 py-2">
+                    <div className="bg-black rounded-[12px] px-4 py-2">
                       <span className="text-white font-medium text-sm">
                         Inicio
                       </span>
@@ -84,7 +85,7 @@ const Navbar = () => {
                   <Link
                     to="/contacto"
                     className={`
-                      px-4 py-2 rounded-lg font-medium text-sm transition-all duration-500
+                      px-4 py-2 rounded-[12px] font-medium text-sm transition-all duration-500
                       ${isScrolled 
                         ? "bg-white text-[#6c7178] hover:bg-gray-100" 
                         : "bg-black text-white hover:bg-black/90"}
