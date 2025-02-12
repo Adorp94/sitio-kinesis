@@ -55,22 +55,36 @@ const Navbar = () => {
               <div className="hidden md:flex items-center gap-8">
                 {!isScrolled && (
                   <div className="flex gap-8">
-                    <NavLink to="/" isActive={location.pathname === "/"}>Inicio</NavLink>
-                    <NavLink to="/productos" isActive={location.pathname === "/productos"}>Productos</NavLink>
-                    <NavLink to="/legal" isActive={location.pathname === "/legal"}>Legal</NavLink>
+                    <NavLink to="/" isActive={location.pathname === "/"}>
+                      Inicio
+                    </NavLink>
+                    <NavLink 
+                      to="/productos" 
+                      isActive={location.pathname === "/productos"}
+                    >
+                      Productos
+                    </NavLink>
+                    <NavLink 
+                      to="/legal" 
+                      isActive={location.pathname === "/legal"}
+                    >
+                      Legal
+                    </NavLink>
                   </div>
                 )}
 
                 <div className="flex items-center gap-3">
                   {isScrolled && (
                     <div className="bg-black rounded-lg px-4 py-2">
-                      <span className="text-white font-manrope text-sm">Inicio</span>
+                      <span className="text-white font-medium text-sm">
+                        Inicio
+                      </span>
                     </div>
                   )}
                   <Link
                     to="/contacto"
                     className={`
-                      px-4 py-2 rounded-lg transition-all duration-500
+                      px-4 py-2 rounded-lg font-medium text-sm transition-all duration-500
                       ${isScrolled 
                         ? "bg-white text-[#6c7178] hover:bg-gray-100" 
                         : "bg-black text-white hover:bg-black/90"}
@@ -88,12 +102,18 @@ const Navbar = () => {
   );
 };
 
-const NavLink = ({ to, children, isActive }: { to: string; children: React.ReactNode; isActive: boolean }) => (
+interface NavLinkProps {
+  to: string;
+  children: React.ReactNode;
+  isActive: boolean;
+}
+
+const NavLink = ({ to, children, isActive }: NavLinkProps) => (
   <div className="relative">
     <Link
       to={to}
       className={`
-        font-manrope text-sm transition-colors duration-300
+        font-medium text-sm transition-colors duration-300
         ${isActive ? "opacity-100" : "opacity-70 hover:opacity-100"}
       `}
     >

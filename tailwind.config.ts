@@ -26,36 +26,34 @@ export default {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
+        background: {
+          light: "#F5F4F6",
+          DEFAULT: "hsl(var(--background))",
+        },
         foreground: "hsl(var(--foreground))",
+        // Colores del sitio original
         primary: {
           DEFAULT: "#000000",
-          foreground: "#FFFFFF",
+          light: "#647E9C",
+          dark: "#1A1A1A",
         },
-        secondary: {
-          DEFAULT: "#333333",
-          foreground: "#F5F5F5",
-        },
-      },
-      keyframes: {
-        fadeIn: {
-          "0%": { opacity: "0", transform: "translateY(10px)" },
-          "100%": { opacity: "1", transform: "translateY(0)" },
-        },
-        slideIn: {
-          "0%": { transform: "translateX(-100%)" },
-          "100%": { transform: "translateX(0)" },
-        },
-        springIn: {
-         "0%": { transform: "scale(1)" },
-         "50%": { transform: "scale(0.95)" },
-         "100%": { transform: "scale(0.9)" },
+        accent: {
+          DEFAULT: "#EFA367",
+          light: "#FFB685",
         },
       },
-      animation: {
-        fadeIn: "fadeIn 0.5s ease-out forwards",
-        slideIn: "slideIn 0.5s ease-out forwards",
-        springIn: "springIn 0.7s ease-in-out forwards"
+      borderRadius: {
+        '2xl': '2rem',
+      },
+      spacing: {
+        '18': '4.5rem',
+        '22': '5.5rem',
+      },
+      height: {
+        '18': '4.5rem',
+      },
+      maxWidth: {
+        'site': '1150px',
       },
     },
   },
