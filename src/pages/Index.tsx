@@ -7,9 +7,14 @@ import Footer from "../components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-[#f5f4f6] overscroll-none">
-      <Navbar />
-      <Hero />
+    <main className="relative bg-[#f5f4f6]">
+      {/* Background wrapper que se extenderá durante el overscroll */}
+      <div className="absolute inset-0 w-full h-full bg-[#f5f4f6] min-h-screen" />
+      
+      {/* Contenido principal */}
+      <div className="relative">
+        <Navbar />
+        <Hero />
       
       {/* Productos Section */}
       <section className="py-24 px-4">
@@ -119,6 +124,7 @@ const Index = () => {
 
       <Footer />
       </div>
+    </main>
   );
 };
 
