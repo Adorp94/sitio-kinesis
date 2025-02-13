@@ -1,4 +1,3 @@
-
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import { Card, CardContent } from "@/components/ui/card";
@@ -93,22 +92,43 @@ const Index = () => {
       {/* Partners Section */}
       <section className="py-12 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-3 gap-8 items-center justify-items-center">
-            <img
-              src="/lovable-uploads/feb73565-c4dd-474f-b211-b5aafc97a0aa.png"
-              alt="Buro de Crédito"
-              className="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity"
-            />
-            <img
-              src="/lovable-uploads/feb73565-c4dd-474f-b211-b5aafc97a0aa.png"
-              alt="Condusef"
-              className="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity"
-            />
-            <img
-              src="/lovable-uploads/feb73565-c4dd-474f-b211-b5aafc97a0aa.png"
-              alt="CNBV"
-              className="h-16 w-auto opacity-70 hover:opacity-100 transition-opacity"
-            />
+        <div className="grid grid-cols-3 gap-8 items-center justify-items-center">
+            <a 
+              href="https://www.burodecredito.com.mx/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="transition-opacity hover:opacity-100 opacity-70"
+            >
+              <img
+                src="/burodecredito.avif"
+                alt="Buro de Crédito"
+                className="h-16 w-auto"
+              />
+            </a>
+            <a 
+              href="https://www.condusef.gob.mx/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="transition-opacity hover:opacity-100 opacity-70"
+            >
+              <img
+                src="/condusef.avif"
+                alt="Condusef"
+                className="h-16 w-auto"
+              />
+            </a>
+            <a 
+              href="https://www.gob.mx/cnbv" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="transition-opacity hover:opacity-100 opacity-70"
+            >
+              <img
+                src="/cnbv.avif"
+                alt="CNBV"
+                className="h-16 w-auto"
+              />
+            </a>
           </div>
         </div>
       </section>
