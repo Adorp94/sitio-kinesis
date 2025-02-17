@@ -13,6 +13,19 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleNavClick = (sectionId: string) => {
+    // Si estamos en la página principal
+    if (location.pathname === "/") {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      // Si estamos en otra página, redirigir a la página principal con el hash
+      window.location.href = `/#${sectionId}`;
+    }
+  };
+
   return (
     <nav 
       style={{ position: 'fixed', top: 0, left: 0, right: 0 }}
@@ -59,18 +72,18 @@ const Navbar = () => {
                     <NavLink to="/" isActive={location.pathname === "/"}>
                       Inicio
                     </NavLink>
-                    <NavLink 
-                      to="/productos" 
-                      isActive={location.pathname === "/productos"}
+                    <button 
+                      onClick={() => handleNavClick("productos")}
+                      className={`font-medium text-sm transition-colors duration-300 ${location.hash === '#productos' ? 'opacity-100' : 'opacity-70 hover:opacity-100'}`}
                     >
                       Productos
-                    </NavLink>
-                    <NavLink 
-                      to="/legal" 
-                      isActive={location.pathname === "/legal"}
+                    </button>
+                    <button 
+                      onClick={() => handleNavClick("legal")}
+                      className={`font-medium text-sm transition-colors duration-300 ${location.hash === '#legal' ? 'opacity-100' : 'opacity-70 hover:opacity-100'}`}
                     >
                       Legal
-                    </NavLink>
+                    </button>
                   </div>
                 )}
 

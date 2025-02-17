@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -10,7 +9,7 @@ const Footer = () => {
           <div className="space-y-4">
             <Link to="/" className="flex items-center">
               <img
-                src="/placeholder.svg"
+                src="/kinesis-logo.avif"
                 alt="Kinesis Logo"
                 className="h-8 w-auto"
               />
@@ -44,14 +43,24 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Legal</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/terminos" className="text-gray-400 hover:text-white transition-colors">
+                <a 
+                  href="https://kinesis-docs.s3.us-east-1.amazonaws.com/terminos_y_condiciones.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-white transition-colors inline-flex items-center gap-1"
+                >
                   Términos y Condiciones
-                </Link>
+                </a>
               </li>
               <li>
-                <Link to="/bef" className="text-gray-400 hover:text-white transition-colors">
+                <a 
+                  href="https://kinesis-docs.s3.us-east-1.amazonaws.com/buro_de_entidades_financieras.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-white transition-colors inline-flex items-center gap-1"
+                >
                   Buró de Entidades Financieras
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
@@ -60,8 +69,22 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Contacto</h3>
             <ul className="space-y-2 text-gray-400">
-              <li>Teléfono: +52 33 3113 6103</li>
-              <li>Email: atencion@kinesiscatalitica.com</li>
+              <li>
+                <a 
+                  href="tel:+523331136103" 
+                  className="hover:text-white transition-colors"
+                >
+                  Teléfono: +52 33 3113 6103
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="mailto:atencion@kinesiscatalitica.com"
+                  className="hover:text-white transition-colors"
+                >
+                  Email: atencion@kinesiscatalitica.com
+                </a>
+              </li>
             </ul>
           </div>
         </div>
